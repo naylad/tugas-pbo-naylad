@@ -58,6 +58,38 @@ $db = new dbController();
     </div>
   </nav>
   <!-- Akhir Navbar -->
+  <!-- Cards -->
+  <div class="container">
+    <h1 class='text-center'>Kelas</h1>
+    <div class="row text-center justify-content-center">
+
+      <?php
+      $sql = "select * from t_kelas";
+      $row = $db->getALL($sql);
+      foreach ($row as $value):
+        ?>
+
+        <div class="col-md-4 mb-5">
+
+
+
+          <div class="card0-all" style="width: 18rem;">
+            <img src="img/kelas/<?php echo $value['f_nama']; ?>.jpg" class="card-img-top" alt="kelas">
+            <div class="card-body">
+              <h5 class="card-title">
+
+                <?php echo $value['f_nama']; ?>
+
+              </h5>
+              <a href="#" class="btn btn-primary">Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <?php
+      endforeach
+      ?>
+    </div>
 
 
   </div>
@@ -76,7 +108,7 @@ $db = new dbController();
 
 
           <div class="card" style="width: 18rem;">
-            <img src="img/<?php echo $value['f_nama']; ?>.jpg" class="card-img-top" alt="jurusan">
+            <img src="img/jurusan/<?php echo $value['f_nama']; ?>.jpg" class="card-img-top" alt="jurusan">
             <div class="card-body">
               <h5 class="card-title">
 
